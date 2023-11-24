@@ -19,6 +19,13 @@ const setMain = (show) => {
     }
 }
 
+const setEmpty = (show) => {
+    const item = document.getElementById("empty")
+    if (item) {
+        item.style.display = show ? "flex" : "none"
+    }
+}
+
 const setItems = (content) => {
     const item = document.getElementById("items")
     if (item) {

@@ -5,23 +5,6 @@ const state = {
     isLoading: true,
 }
 
-const getCategories = async () => {
-    const resp = await fetch("https://openapi.programming-hero.com/api/videos/categories");
-    const data = await resp.json();
-
-    if (data['status'] == true) {
-        return data['data'];
-    }
-}
-
-const getPosts = async (catId) => {
-    const resp = await fetch(`https://openapi.programming-hero.com/api/videos/category/${catId}`);
-    const data = await resp.json();
-    if (data['status'] == true) {
-        return data['data'];
-    }
-}
-
 const tunePost = (post) => {
     const author = post.authors[0];
     let views = ''
@@ -46,6 +29,24 @@ const tunePost = (post) => {
     };
 }
 
+const getCategories = async () => {
+    const resp = await fetch("https://openapi.programming-hero.com/api/videos/categories");
+    const data = await resp.json();
+
+    if (data['status'] == true) {
+        return data['data'];
+    }
+}
+
+const getPosts = async (catId) => {
+    const resp = await fetch(`https://openapi.programming-hero.com/api/videos/category/${catId}`);
+    const data = await resp.json();
+    if (data['status'] == true) {
+        return data['data'].map(tunePost);
+    }
+}
+
+
 
 const render = () => {
     if (state.isLoading) {
@@ -54,23 +55,14 @@ const render = () => {
         setMain(false);
     } else {
         setSpinner(false);
-        setSortButton(true);
+        setSortButton(state.posts && state.posts.length > 0);
+        setEmpty(state.posts && state.posts.length == 0);
         setMain(true);
         const btns = state.cats.map((v) => createCategoryButton(v.category, v.category_id, v.category_id == state.selectedCat));
         setBtns(btns.join(''))
-        const posts = state.posts.map(tunePost).map((v) => createVideoCard(v.title, v.channel, v.views, v.postedAt, v.isVerified, v.thumbnail, v.channelIcon));
+        const posts = state.posts.map((v) => createVideoCard(v.title, v.channel, v.views, v.postedAt, v.isVerified, v.thumbnail, v.channelIcon));
         setItems(posts.join(''))
     }
-}
-
-const test = () => {
-    // if (state.posts) {
-    //     state.posts = null;
-    // } else {
-    //     state.posts = [];
-    // }
-    state.isLoading = !state.isLoading;
-    render()
 }
 
 const showCat = async (catId) => {
@@ -84,6 +76,11 @@ const showCat = async (catId) => {
     state.posts = posts ?? []
     state.isLoading = false;
     render()
+}
+
+const orderPosts = () => {
+    state.posts.sort((a, b) => parseFloat(b.views.replace('K views', '')) - parseFloat(a.views.replace('K views', '')));
+    render();
 }
 
 const init = async () => {
