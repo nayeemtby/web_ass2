@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Blog</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark">
+    <div style="height: 15vh;"></div>
+    <div class="container d-flex flex-column justify-content-center">
+        <div class="row">
+
+            <div class="col-1 col-lg-3"></div>
+            <div class="accordion col-12 col-md-10 col-lg-6" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            Discuss the scope of &nbsp; <strong>var</strong>,&nbsp; <strong>let</strong>&nbsp; and
+                            &nbsp; <strong>const</strong>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingOne">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>var:</strong>&nbsp;var is function scoped and its declaration is hoisted to
+                                    the top of it's scope. Which means a variable declared/defined using var keyword
+                                    inside anywhere in a function will be visible/accessible from the top of the
+                                    function's scope. We can reassign variables declared using var.
+                                </li>
+                                <li>
+                                    <strong>let:</strong>&nbsp;let is block scoped. Which means any variable
+                                    declared/defined using let keyword inside a code block cannot be accessed from
+                                    outside the block. We can reassign variables declared using let as well.
+                                </li>
+                                <li>
+                                    <strong>const:</strong>&nbsp;const is also block scoped just like let. But we cannot
+                                    reassign the variables declared using const.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                            Tell us the use cases of &nbsp; <strong>null</strong>&nbsp; and
+                            &nbsp;<strong>undefined</strong>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingTwo">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>undefined:</strong>&nbsp;undefined expresses that the variable has not been
+                                    given a value. It is the default state of a variable that has been declared but has
+                                    not been given any value. It could be used to indicate that the variable has not
+                                    been initialized and should not be used.
+                                </li>
+                                <li>
+                                    <strong>null:</strong>&nbsp;null is used to express that the value of the variable
+                                    has been intentionally set to be void. It can be used to describe that a this
+                                    variable is not to hold a value at this point and can be used to take descisions
+                                    based on that.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">
+                            What do you mean by &nbsp; <strong> REST API</strong>?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                        aria-labelledby="panelsStayOpen-headingThree">
+                        <div class="accordion-body">
+                            REST API is an API standard generally used to connect client and the server in a
+                            client-server model. Typically the client sends a request to the server and the server
+                            processes the request and sends back appropriate response.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col-2 col-md-4 col-lg-5"></div>
+            <div class="btn btn-sm btn-success col-8 col-md-4 col-lg-2" onclick="window.location.href = '/'">Home</div>
+        </div>
+    </div>
+</body>
+
+</html>
