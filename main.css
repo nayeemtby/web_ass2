@@ -1,0 +1,47 @@
+.channel-icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+
+.video-thumbnail{
+    position: relative;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.video-title{
+    font-size: 16px;
+    font-weight: 700;
+    color: #171717;
+    padding: 0px;
+    margin: 0px;
+}
+
+.channel-title{
+    font-size: 14px;
+    font-weight: 400;
+    color: #171717AA;
+    padding: 0px;
+    margin: 0px;
+}
+
+.view-count{
+    font-size: 14px;
+    font-weight: 400;
+    color: #171717AA;
+}
+
+.posted-at{
+    position: absolute;
+    font-size: 10px;
+    font-weight: 400;
+    color: white;
+    padding: 6px;
+    background-color: #171717;
+    border-radius: 6px;
+    bottom: 12px;
+    right: 12px;
+    margin: 0px;
+}
