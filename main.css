@@ -1,6 +1,7 @@
 .channel-icon{
     height: 40px;
     width: 40px;
+    object-fit: cover;
     border-radius: 20px;
 }
 
@@ -8,7 +9,14 @@
     position: relative;
     border-radius: 8px;
     margin-bottom: 20px;
+    height: 200px;
     overflow: hidden;
+}
+
+.video-thumbnail img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .video-title{
